@@ -7,7 +7,7 @@ const cors = require('cors');
 const CryptoJS = require('crypto-js'); 
 
 app.use(cors({
-  origin: "https://vercel-frontend-five.vercel.app/space",
+  origin: "https://vercel-frontend-five.vercel.app",
   methods: ['GET', 'POST'],
   credentials: true
 }));
