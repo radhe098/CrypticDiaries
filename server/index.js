@@ -1,15 +1,18 @@
+
 const express = require("express");
 const fs = require('fs');
 const path = require('path');
+require('dotenv').config();
+const uri = process.env.uri;
 const port = 3000;
 const app = express();
 const cors = require('cors');
 const CryptoJS = require('crypto-js'); 
-
+const mongoose = require('mongoose');
 app.use(cors({
-  origin: "https://vercel-frontend-five.vercel.app/space",
-  methods: ['GET', 'POST'],
-  credentials: true
+  // origin: "https://vercel-frontend-five.vercel.app/",
+  // methods: ['GET', 'POST'],
+  // credentials: true
 }));
 app.use(express.json())
 app.post('/', async (req, res) => {
@@ -41,6 +44,12 @@ app.post('/', async (req, res) => {
 
 app.get('/', (req, res) => {
   res.send('Hello world');
+})
+
+mongoose.connect(uri).then(() =>{
+  console.log('Database connected');
+}).catch((e)=>{
+  console.log(e)
 })
 
 app.listen(port, () => {

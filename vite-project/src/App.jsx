@@ -9,7 +9,7 @@ function App() {
   const Router = (createBrowserRouter([
     {path:'/space', element:<Space/> },
     {path:'/', element:<Homepage/> },
-    {path:'/login', element:<Login/> },
+    {path:'/blogs', element:<Login/> },
     {path:'/register', element:<Register/> }
     
   ]))

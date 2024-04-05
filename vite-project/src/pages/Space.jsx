@@ -23,7 +23,6 @@ const Space = () => {
     // setEnkey(tempenKey)
 
     const encryptedEntry = CryptoJS.AES.encrypt(entry, enKey.toString()).toString();
-
     const formdata = {
       date: currentDate,
       title: title,
@@ -32,7 +31,7 @@ const Space = () => {
     };
 
     try {
-      const response = await axios.post('http://localhost:5000', formdata, {
+      const response = await axios.post('http://localhost:3000', formdata, {
         headers: {
           'Content-Type': 'application/json',},
         withCredentials: false,
