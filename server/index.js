@@ -45,7 +45,9 @@ app.post('/', async (req, res) => {
 app.get('/', (req, res) => {
   res.send('Hello world');
 })
-
+app.get('/data',async (req,res) =>{
+  await res.send()
+})
 mongoose.connect(uri).then(() =>{
   console.log('Database connected');
 }).catch((e)=>{
